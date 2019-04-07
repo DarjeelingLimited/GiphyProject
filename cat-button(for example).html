@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>The Magical Cat Button</title>
+</head>
+
+<body>
+  <button id="cat-button">magical cat button</button>
+  <div id="images">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // upon clicking on the button w/ the cat-button id, run a function (click event)
+    $("#cat-button").on("click", function() {
+
+      // sourcing the URL from the one below a set API key. define query URL for var for your ajax
+      var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
+
+      // using the get method to query from the above query URL
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+
+      // the callback - run a runction off the input (a response)
+        .then(function(response) {
+
+        // setting a variable of imageURL where you're referencing a field from the object (image_original_url)
+          var imageUrl = response.data.image_original_url;
+
+          // using jquery to set a variable to an img tag
+          var catImage = $("<img>");
+
+          // giving an attribute and value to the variable (and therefore the new img tag)
+          catImage.attr("src", imageUrl);
+          catImage.attr("alt", "cat image");
+
+          //add the catImage variable (and tag) to the beginnning of the existing images div
+          $("#images").prepend(catImage);
+        });
+    });
+  </script>
+</body>
+
+</html>

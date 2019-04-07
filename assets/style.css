@@ -1,0 +1,15 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.jumbotron{
+    background-image: url("https://images7.alphacoders.com/808/808084.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1{
+    color: white;
+}
