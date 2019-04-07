@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <title>Giphy Project</title>
 </head>
 
 <body>
 
 
-    <main class="mx-5 my-5">
+    <main id="background" class="mx-5 my-5">
         <div class="jumbotron jumbotron-fluid">
             <h1 class="display-4 text-center">Saturday Night Gifs</h1>
         </div>
@@ -24,25 +24,24 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container my-5">
             <div class="row">
                 <div id="gifs-appear-here" class="col">
                 </div>
+        <div class="row">
+                <form>
+                        Add a gif<br>
+                        <input type="text" id="addedTopic"><br>
+                        <input type="submit" id="newGif" value="Submit">
+                    </form>
+        </div>        
             </div>
         </div>
-
-
-        <form>
-            Add a gif<br>
-            <input type="text" id="addedTopic"><br>
-            <input type="submit" id="newGif" value="Submit">
-        </form>
-
     </main>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="javascript.js"></script>
+    <script src="assets/javascript.js"></script>
 
 </body>
 

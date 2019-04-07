@@ -22,6 +22,22 @@ $(document).ready(function () {
     createButtons();
     gifSearch();
 
+    //input a new search term to create a new button + item in the array
+    function newInput() {
+        $("#newGif").on("click", function () {
+            var newTopic = $("#addedTopic").val.trim() //trimto get rid of white spaces
+            
+            //to add new topic to the array
+            topics.push(newTopic);
+            console.log(newTopic)
+
+            createButtons();
+            gifSearch();
+        });
+    };
+    
+
+
 
     // // Adding click event listen listener to all buttons
     function gifSearch() {
@@ -68,6 +84,12 @@ $(document).ready(function () {
                             var p = $("<p>").text("Rating: " + results[i].rating);
                             p.addClass("my-2 align-text-bottom");
 
+                            //bonus of adding a title -- saying it's undefined? 
+                            var title = results[i].images.title;
+                            console.log(title);
+                            var p2 = $("<p>").text("Title: " + results[i].images.title);
+                            p2.addClass("my-2 align-text-bottom");
+
                             // Creating and storing an image tag
                             var gifImage = $("<img>");
 
@@ -80,7 +102,7 @@ $(document).ready(function () {
                             gifImage.attr("data-still", results[i].images.fixed_height_still.url);
                             //getting the animated version of the gif
                             gifImage.attr("data-animate", results[i].images.fixed_height.url);
-                            
+
 
                             // adding pauseGif class to call later in the onclick function
                             // using some bootstrap classes to spread out the images
@@ -92,6 +114,7 @@ $(document).ready(function () {
 
                             // Prependng the gifDiv to the HTML page in the "#gifs-appear-here" div
                             $("#gifs-appear-here").prepend(gifDiv);
+                            $("#gis-appear-here").addClass("rounded mx-auto d-block");
                         }
                     }
 
@@ -112,16 +135,11 @@ $(document).ready(function () {
                             $(this).attr("data-state", "still");
                         }
                     }
-                    ); //closes on click
-                })
-        })//closes the then 
+                    );
+                }) //closes the 'then'
+        })//closes on click
 
-        // //click submit button to add to array
-        // $("#newGif").on("click", function(){
-        //     var newTopic = $(".addedTopic").val().trim() //so there's no white space
-        //     //push the new value to the array
-        //     topics.push(newTopic);
-        // }
 
-    }        //from class activity
+
+    }
 })
