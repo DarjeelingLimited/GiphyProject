@@ -8,6 +8,9 @@ Why the project is useful
 
 This project demonstrates how to use a 'GET' request for API data. It also displays how user inputs can be captured and in turn create a new HTML element (the new topic button).
 
+Deployed project link
+https://darjeelinglimited.github.io/GiphyProject/
+
 Where users can get help with your project
 
 Contact the creator of this repository
